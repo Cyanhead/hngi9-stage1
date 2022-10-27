@@ -10,18 +10,22 @@ export const Wrap = styled.div`
   margin: 0 auto;
   padding: 24px;
   max-width: 1200px;
-
-  border: 3px solid white; // TODO delete
 `;
 
 export const Section = styled.div`
-  border: 3px solid red; // TODO delete
-
   display: flex;
   flex-direction: column;
   align-items: center;
 
   width: 100%;
+`;
+
+export const ProfilePhotoWrap = styled.div``;
+
+export const ProfilePhoto = styled.img`
+  width: 88px;
+  height: auto;
+  border-radius: 50%;
 `;
 
 // export const Section = styled.div``;
