@@ -5,6 +5,7 @@ import {
   Section,
   ProfilePhotoWrap,
   ProfilePhoto,
+  Name,
 } from './home-page.style';
 
 import profile from '../../assets/images/profile.jpg';
@@ -17,6 +18,7 @@ const HomePage = () => {
           <ProfilePhotoWrap>
             <ProfilePhoto src={profile} alt="" />
           </ProfilePhotoWrap>
+          <Name>Bunmi Oye</Name>
         </Section>
       </Wrap>
     </Container>

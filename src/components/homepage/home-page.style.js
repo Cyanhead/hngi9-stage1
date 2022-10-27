@@ -28,4 +28,13 @@ export const ProfilePhoto = styled.img`
   border-radius: 50%;
 `;
 
+export const Name = styled.h1`
+  /* font-family: Inter; */
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0em;
+  text-align: center;
+`;
+
 // export const Section = styled.div``;
