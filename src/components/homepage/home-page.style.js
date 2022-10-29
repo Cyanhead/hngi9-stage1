@@ -9,30 +9,28 @@ export const Wrap = styled.div`
   flex-direction: column;
 
   margin: 0 auto;
-  padding: 64px 12px;
+  padding: 64px 24px;
   max-width: 1200px;
-
-  border: 3px solid black; // TODO delete
 `;
 
 export const Section = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => props.flexDir || 'column'};
+  justify-content: ${props => props.justCont || 'center'};
   align-items: center;
 
-  margin-bottom: 56px;
+  margin: ${props => props.mar || '0 0 56px 0'};
+  padding: ${props => props.pad || ''};
   width: 100%;
   padding: ${props => props.pad || ''};
 
   &:last-child {
     margin-bottom: 0;
   }
-
-  /* border: 3px solid red; // TODO delete */
 `;
 
-export const ProfilePhotoWrap = styled.div`
-  margin-bottom: 24px;
+export const PhotoWrap = styled.div`
+  margin: ${props => props.mar || ''};
 `;
 
 export const ProfilePhoto = styled.img`
@@ -50,6 +48,10 @@ export const Name = styled.h1`
 `;
 
 export const Link = styled.a`
+  margin: ${props => props.mar || ''};
+`;
+
+export const ButtonLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +59,6 @@ export const Link = styled.a`
   margin-bottom: 24px;
   width: 100%;
   height: 76px;
-  /* text-align: center; */
   border-radius: 8px;
 
   background-color: #eaecf0;
@@ -70,6 +71,8 @@ export const Link = styled.a`
 `;
 
 export const Text = styled.p`
+  color: ${props => props.fg || ''};
+
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
@@ -78,4 +81,7 @@ export const Text = styled.p`
   text-transform: ${props => props.textTrans || 'capitalize'};
 `;
 
-// export const Section = styled.div``;
+export const Photo = styled.img`
+  width: ${props => props.width || ''};
+  height: auto;
+`;
