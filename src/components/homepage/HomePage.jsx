@@ -38,9 +38,12 @@ const HomePage = () => {
       <Wrap>
         <Section>
           <PhotoWrap mar="0 0 24px 0">
-            <ProfilePhoto src={profile} alt="" />
+            <ProfilePhoto src={profile} alt="" id="profile__img" />
           </PhotoWrap>
-          <Name>Bunmi Oye</Name>
+          <Name id="twitter">Cyanhead</Name>
+          <Name id="slack" style={{ display: 'none' }}>
+            Cyanhead
+          </Name>
         </Section>
         <Section mar="0 0 24px 0">
           <Links
