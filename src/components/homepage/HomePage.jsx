@@ -22,10 +22,19 @@ const HomePage = () => {
   const Links = ({ links }) => {
     return (
       <>
-        {links.map(({ value, url, resetCase }, i) => {
+        {links.map(({ id, value, subtext, url, resetCase }, i) => {
           return (
-            <ButtonLink href={url} key={url + i}>
-              <Text textTrans={resetCase ? 'unset' : ''}>{value}</Text>
+            <ButtonLink
+              id={id}
+              href={url}
+              key={url + i}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Text textTrans={resetCase ? 'unset' : ''}>
+                {value}
+                {subtext ? `: ${subtext}` : ''}
+              </Text>
             </ButtonLink>
           );
         })}
@@ -36,6 +45,7 @@ const HomePage = () => {
   return (
     <Container>
       <Wrap>
+        {/* PROFILE SECTION */}
         <Section>
           <PhotoWrap mar="0 0 24px 0">
             <ProfilePhoto src={profile} alt="" id="profile__img" />
@@ -45,34 +55,73 @@ const HomePage = () => {
             Cyanhead
           </Name>
         </Section>
+
+        {/* LINKS SECTION */}
         <Section mar="0 0 24px 0">
           <Links
             links={[
-              { value: 'twitter link', url: 'https://twitter.com' },
-              { value: 'zuri team', url: '/' },
-              { value: 'zuri books', url: '/' },
-              { value: 'python books', url: '/' },
               {
+                id: 'twitter__link',
+                value: 'Twitter link',
+                url: 'https://twitter.com/cyanhead',
+              },
+              {
+                id: 'btn__zuri',
+                value: 'Zuri team',
+                url: 'https://training.zuri.team/',
+              },
+              {
+                id: 'books',
+                value: 'Zuri books',
+                subtext: 'The place to find books on design and coding.',
+                url: 'http://books.zuri.team/',
+              },
+              {
+                id: 'book__python',
+                value: 'Python books',
+                subtext: 'Learn python hassle-free today.',
+                url: 'https://books.zuri.team/python-for-beginners?ref_id=cyanhead',
+              },
+              {
+                id: 'pitch',
                 value: 'Background Check for Coders',
-                url: '/',
+                subtext: 'Our backround checks on coders are 🔥. Try it now.',
+                url: 'https://backgroundcheck.zuri.team/',
                 resetCase: true,
               },
-              { value: 'design books', url: '/' },
+              {
+                id: 'book__design',
+                value: 'Design books',
+                subtext: "Be the designer you've dreamed of, free of charge!",
+                url: 'https://books.zuri.team/design-rules',
+              },
             ]}
           />
         </Section>
         <Section flexDir="row" pad="24px">
-          <Link href="/lol" mar="0 12px">
+          <Link
+            href="https://slack.com/"
+            target="_blank"
+            rel="noreferrer"
+            mar="0 12px"
+          >
             <PhotoWrap>
               <Photo src={slack} alt="" />
             </PhotoWrap>
           </Link>
-          <Link href="/lol" mar="0 12px">
+          <Link
+            href="https://github.com/cyanhead"
+            target="_blank"
+            rel="noreferrer"
+            mar="0 12px"
+          >
             <PhotoWrap>
               <Photo src={github} alt="" />
             </PhotoWrap>
           </Link>
         </Section>
+
+        {/* FOOTER SECTION */}
         <Section flexDir="row" justCont="space-between" pad="84px 0 52px 0">
           <PhotoWrap>
             <Photo src={zuri} alt="" />

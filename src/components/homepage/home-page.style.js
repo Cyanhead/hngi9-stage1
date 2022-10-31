@@ -49,6 +49,13 @@ export const Name = styled.h1`
 
 export const Link = styled.a`
   margin: ${props => props.mar || ''};
+
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const ButtonLink = styled(Link)`
@@ -62,8 +69,6 @@ export const ButtonLink = styled(Link)`
   border-radius: 8px;
 
   background-color: #eaecf0;
-  color: inherit;
-  text-decoration: none;
 
   &:last-child {
     margin-bottom: 0;
@@ -78,7 +83,6 @@ export const Text = styled.p`
   line-height: 28px;
   letter-spacing: 0em;
   text-align: center;
-  text-transform: ${props => props.textTrans || 'capitalize'};
 `;
 
 export const Photo = styled.img`
