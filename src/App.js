@@ -1,5 +1,5 @@
 import GlobalStyles from './global.style';
-import HomePage from './components/Homepage';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
