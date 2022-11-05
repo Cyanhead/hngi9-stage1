@@ -2,6 +2,7 @@ import GlobalStyles from './global.style';
 import HomePage from './components/HomePage';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/contact" element={<div>contact</div>} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
