@@ -14,18 +14,11 @@ import {
 } from './contact.style';
 
 const Contact = () => {
-  const FormGroup = ({
-    labelName,
-    inputType,
-    textArea,
-    id,
-    flexDir,
-    children,
-  }) => {
+  const FormGroup = ({ labelName, inputType, id, flexDir, children }) => {
     return (
       <Group flexDir={flexDir}>
-        <Label>{labelName}</Label>
-        {textArea ? <TextArea id={id} /> : <Input type={inputType} id={id} />}
+        <Label htmlFor={id}>{labelName}</Label>
+        {children ? children : <Input type={inputType} id={id} />}
       </Group>
     );
   };
@@ -39,16 +32,29 @@ const Contact = () => {
             Hi there, contact me to ask me about anything you have in mind
           </Desc>
           <Form>
+            <div style={{ display: 'flex', alignContent: 'center' }}>
+              <FormGroup
+                labelName="First name"
+                inputType="text"
+                id="first_name"
+              />
+              <FormGroup
+                labelName="Last name"
+                inputType="text"
+                id="last_name"
+              />
+            </div>
+            <FormGroup labelName="Email address" id="message">
+              <TextArea id="message" />
+            </FormGroup>
             <FormGroup
-              labelName="First name"
-              inputType="text"
-              id="first_name"
+              flexDir="row-reverse"
+              labelName="You agree to providing your data to {name} who may contact you."
+              inputType="checkbox"
+              id="agreement"
             />
-            <FormGroup labelName="Last name" inputType="text" id="last_name" />
-            <FormGroup labelName="Email address" inputType="email" id="email" />
-            <FormGroup labelName="Email address" textArea id="message" />
 
-            <Button id="btn__submit">button</Button>
+            <Button id="btn__submit">Submit message</Button>
           </Form>
         </FormWrap>
       </Wrap>

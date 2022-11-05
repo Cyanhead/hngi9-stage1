@@ -24,7 +24,9 @@ export const FormWrap = styled.div`
 export const Group = styled.fieldset`
   display: flex;
   flex-direction: ${props => props.flexDir || 'column'};
+  justify-content: flex-end;
 
+  width: 100%;
   outline: none;
   border: none;
 `;
@@ -39,4 +41,6 @@ export const Title = styled.h2``;
 
 export const Desc = styled.p``;
 
-export const Button = styled.button``;
+export const Button = styled.button`
+  width: 100%;
+`;
