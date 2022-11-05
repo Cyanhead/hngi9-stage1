@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link as LinkR } from 'react-router-dom';
 
 export const Container = styled.div`
   width: 100%;
@@ -72,6 +73,30 @@ export const ButtonLink = styled(Link)`
 
   &:last-child {
     margin-bottom: 0;
+  }
+`;
+
+export const RouteLink = styled(LinkR)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 24px;
+  width: 100%;
+  height: 76px;
+  border-radius: 8px;
+
+  background-color: #eaecf0;
+  color: inherit;
+
+  text-decoration: none;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 

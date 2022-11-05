@@ -10,6 +10,7 @@ import {
   ButtonLink,
   Text,
   Photo,
+  RouteLink,
 } from './home-page.style';
 
 import profile from '../../assets/images/profile.jpg';
@@ -19,25 +20,44 @@ import zuri from '../../assets/images/Zuri.Internship_Logo.svg';
 import i4g from '../../assets/images/I4G.svg';
 
 const HomePage = () => {
-  const Links = ({ links }) => {
+  const Links = ({ links, routeLink }) => {
     return (
       <>
-        {links.map(({ id, value, subtext, url, resetCase }, i) => {
-          return (
-            <ButtonLink
-              id={id}
-              href={url}
-              key={url + i}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Text textTrans={resetCase ? 'unset' : ''}>
-                {value}
-                {subtext ? `: ${subtext}` : ''}
-              </Text>
-            </ButtonLink>
-          );
-        })}
+        {links.map(
+          ({ id, value, subtext, url, resetCase, internalRoute }, i) => {
+            return (
+              <React.Fragment key={url}>
+                {internalRoute ? (
+                  <RouteLink
+                    id={id}
+                    to={url}
+                    key={url + i}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Text textTrans={resetCase ? 'unset' : ''}>
+                      {value}
+                      {subtext ? `: ${subtext}` : ''}
+                    </Text>
+                  </RouteLink>
+                ) : (
+                  <ButtonLink
+                    id={id}
+                    href={url}
+                    key={url + i}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Text textTrans={resetCase ? 'unset' : ''}>
+                      {value}
+                      {subtext ? `: ${subtext}` : ''}
+                    </Text>
+                  </ButtonLink>
+                )}
+              </React.Fragment>
+            );
+          }
+        )}
       </>
     );
   };
@@ -94,6 +114,12 @@ const HomePage = () => {
                 value: 'Design books',
                 subtext: "Be the designer you've dreamed of, free of charge!",
                 url: 'https://books.zuri.team/design-rules',
+              },
+              {
+                id: 'contact',
+                value: 'Contact Me',
+                url: '/contact',
+                internalRoute: true,
               },
             ]}
           />
