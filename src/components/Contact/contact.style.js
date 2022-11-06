@@ -9,7 +9,7 @@ export const Wrap = styled.div`
   flex-direction: column;
 
   margin: 0 auto;
-  padding: 64px 24px;
+  padding: 128px 24px;
   max-width: 1200px;
 `;
 
@@ -27,20 +27,42 @@ export const Group = styled.fieldset`
   justify-content: flex-end;
 
   width: 100%;
+  margin: ${props => props.mar || ''};
   outline: none;
   border: none;
 `;
 
-export const Label = styled.label``;
+export const Label = styled.label`
+  margin: ${props => props.labelMar || ''};
+`;
 
-export const TextArea = styled.textarea``;
+export const TextArea = styled.textarea`
+  padding: 10px 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+`;
 
-export const Input = styled.input``;
+export const Input = styled.input`
+  padding: ${props => props.pad || ''};
+  border-radius: ${props => props.bordRad || ''};
+  border: 1px solid #d0d5dd;
+`;
 
-export const Title = styled.h2``;
+export const Title = styled.h1`
+  margin: 20px 0;
+`;
 
-export const Desc = styled.p``;
+export const Desc = styled.p`
+  margin-bottom: 48px;
+`;
 
 export const Button = styled.button`
+  background-color: #1570ef;
+  color: #fff;
+
   width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
 `;
